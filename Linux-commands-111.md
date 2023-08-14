@@ -221,7 +221,7 @@
 110. `ltrace`: A library call tracker. eg `ltrace ls`
 111. `locate`: Find files by name, quickly
 
-**All these commands are the notes that accumulate in notes as `looks to check`, and I thought I must share them with everyone.** I took help from Google, Whatis Command, and ChatGPT. If you have anymore suggestions do comment.
+**All these commands are from the notes that accumulate as `tooks to check`, and I thought I must share them with everyone.** I took help from Google, Whatis Command, and ChatGPT. If you have anymore suggestions do comment.
 
 ---
 If you have interest in **open source** you can contribue to my projects 
