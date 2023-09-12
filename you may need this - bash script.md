@@ -28,7 +28,7 @@ git commit -m "$1"
 git push
 ```
 <details>
-<summary>If you want to understand each line</summary>
+<summary>Each line explanation: </summary>
   
 #! -> bash shebang
 
@@ -75,9 +75,9 @@ chmod: This is used to change the file permissions.
 Group **a** is 7, which means the current user has all the permissions. You can understand this by
 
   [
-  4: read
-  2: write
-  1: execute
+  4: for read,
+  2 for write,
+  1 for execute
   ]
 
 So, 7 = 4 + 2 + 1, so the current user will have all the permissions.
@@ -121,7 +121,7 @@ alias -g gitpush='/home/scor32k/blogs/scripts/gitpush.sh $1'
 restart the shell (close the terminal and open again). This will globally set the alias.
 
 
-Not the fun
+Now the fun
 Follow
 
 ![final](https://imgur.com/rkkWiJV.png)
