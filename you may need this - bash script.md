@@ -41,13 +41,13 @@ git push -> push to the remote origin.
 </details>
 
 3. Exit **the vim**
-  a. Enter `Esc`
+    a. Enter `Esc`
 
-  b. Enter `:`
+    b. Enter `:`
   
-  c: Enter `wq`
+    c: Enter `wq`
 
-  ![exit vim](https://imgur.com/XA9IOdC.png)
+    ![exit vim](https://imgur.com/XA9IOdC.png)
 
 
 The entire file should be like this:
