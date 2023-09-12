@@ -41,6 +41,7 @@ git push -> push to the remote origin.
 </details>
 
 3. Exit **the vim**
+   
     a. Enter `Esc`
 
     b. Enter `:`
