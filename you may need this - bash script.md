@@ -29,18 +29,25 @@ git push
 ```
 <details>
 <summary>If you want to understand each line</summary>
+  
 #! -> bash shebang
+
 git add . -> add all the files to staging
+
 git commit -m "" -> write changes permanently.
-  git push -> push to the remote origin.
+
+git push -> push to the remote origin.
+
 </details>
 
 3. Exit **the vim**
   a. Enter `Esc`
+
   b. Enter `:`
+  
   c: Enter `wq`
 
-  ![exit vim] (https://imgur.com/XA9IOdC.png)
+  ![exit vim](https://imgur.com/XA9IOdC.png)
 
 
 The entire file should be like this:
