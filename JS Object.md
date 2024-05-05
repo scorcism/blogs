@@ -61,13 +61,16 @@ This prototype object contains properties and method that are accessible to all 
 Consider **Object.create()**  that we used above. It is an method that creates a new object.
 
 Lets look into the method of JS Objects.
+
 (Code snippets are in proper formats, do try too see result)
 
 1. **Object.keys()**
 
 	Returns an array of a given object's own enumerable property **names**. 
 	TL;DR Object.keys() method will return list of keys. 
+	
 	**NOTE:** Own enumerable refers to the properties of an object that are both owned by the object itself (Not inherited from its property chain) 
+	
 	```js
 		const aboutMe= {
 			name: "Abhishek",
@@ -80,7 +83,9 @@ Lets look into the method of JS Objects.
 2. **Object.values()**
 
 	Return an array of a given object's own enumerable property **values**.
+	
 TL;DR Object.values() method will return list of values.
+
 	```js
 		const aboutMe= {
 			name: "Abhishek",
