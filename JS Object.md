@@ -52,9 +52,11 @@ Try run the code snippet.
 
 ### Object Prototypes and Inheritance
 At the core of JS, lies the concept of prototype. Every object in JS is associate with a protorype object, which acts as a **blueprint** for that object. 
+
 In short; object prototype servers as  a template for creating new objects.
-This prototype object contains properties and method that are accessible to all instances created from it.
-🍰
+
+This prototype object contains properties and method that are accessible to all instances created from it.🍰
+
 **Inheritance** is acheived by linking objects through their prototypes. 
 Consider **Object.create()**  that we used above. It is an method that creates a new object.
 
@@ -62,6 +64,7 @@ Lets look into the method of JS Objects.
 (Code snippets are in proper formats, do try too see result)
 
 1. **Object.keys()**
+
 	Returns an array of a given object's own enumerable property **names**. 
 	TL;DR Object.keys() method will return list of keys. 
 	**NOTE:** Own enumerable refers to the properties of an object that are both owned by the object itself (Not inherited from its property chain) 
@@ -75,6 +78,7 @@ Lets look into the method of JS Objects.
 	```
 
 2. **Object.values()**
+
 	Return an array of a given object's own enumerable property **values**.
 TL;DR Object.values() method will return list of values.
 	```js
@@ -86,7 +90,8 @@ TL;DR Object.values() method will return list of values.
 		// Expected Output: [ 'Abhishek', 21 ]
 	```
 
-3. **Object.assign()**
+4. **Object.assign()**
+
 	Copies the values of all enumerable own properties from one or more source objects to a target object.
 	```js
 	const target = {age: 21}
@@ -102,14 +107,15 @@ TL;DR Object.values() method will return list of values.
 	console.log(merged === target)
 	// Expected Output: true
 	```
-4. **Object.create()**
+5. **Object.create()**
+
 	Create new object, using an existing object as the prototype.
 	```js
 	const me = {
 		  name: "Abhishek",
 		  eatsAppleDaily: false,
 		  printAbout: function(){
-		    console.log(`I am ${this.name}. and I ${this.eatsAppleDaily ? "eat" : 		"don't eat"} apple daily.`);
+		    console.log(`I am ${this.name}. and I ${this.eatsAppleDaily ? "eat" :"don't eat"} apple daily.`);
 		  }
 		};
 	
@@ -124,20 +130,20 @@ TL;DR Object.values() method will return list of values.
 	// Expected Output: I am Ladoo. and I eat apple daily.
 	```
 
-5. **Object.entries()**
+6. **Object.entries()**
 
-6. **Object.fromEntries()**
+7. **Object.fromEntries()**
 
-7. **Object.groupBy()**
+8. **Object.groupBy()**
 
-8. **Object.freeze()**
+9. **Object.freeze()**
 
-9. **Object.isFrozen()**
+10. **Object.isFrozen()**
  
-10. **Object.seal()** 
+11. **Object.seal()** 
 
-11. **Object.isSealed()** 
+12. **Object.isSealed()** 
 
-12. **Object.toString()** 
+13. **Object.toString()** 
 
 There are the most common one to use, You can explore more [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) 
