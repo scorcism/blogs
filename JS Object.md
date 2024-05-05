@@ -84,15 +84,15 @@ Lets look into the method of JS Objects.
 
 	Return an array of a given object's own enumerable property **values**.
 	
-TL;DR Object.values() method will return list of values.
+	TL;DR Object.values() method will return list of values.
 
 	```js
-		const aboutMe= {
-			name: "Abhishek",
-			age:21
-		}
-		let aboutMeKeys = Object.values(aboutMe);
-		// Expected Output: [ 'Abhishek', 21 ]
+				const aboutMe= {
+					name: "Abhishek",
+					age:21
+				}
+				let aboutMeKeys = Object.values(aboutMe);
+				// Expected Output: [ 'Abhishek', 21 ]
 	```
 
 4. **Object.assign()**
