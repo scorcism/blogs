@@ -1,5 +1,5 @@
 ## JavaScript Objects
-Similar to other progeamming language javascript objects is a collection of key-value pairs, where each key is a string and each value can be of any data type. 
+Similar to other programming languages javascript objects is a collection of key-value pairs, where each key is a string and each value can be of any data type. 
 
 ### Ways to create JavaScript Object
 1. **Object liternal Notation**
@@ -99,56 +99,118 @@ Lets look into the method of JS Objects.
 
 	Copies the values of all enumerable own properties from one or more source objects to a target object.
 	```js
-	const target = {age: 21}
-	const source = {name: "Abhishek"}
-	const merged = Object.assign(target, source);
-	console.log(merged)
-	// Expected Output: { age: 21, name: 'Abhishek' }
+		const target = {age: 21}
+		const source = {name: "Abhishek"}
+		const merged = Object.assign(target, source);
+		console.log(merged)
+		// Expected Output: { age: 21, name: 'Abhishek' }
 	```
 	**Note:** You can add any number of source args. 
 	
 	**target** will contain the modified object.
+	
 	```js
-	console.log(merged === target)
-	// Expected Output: true
+		console.log(merged === target)
+		// Expected Output: true
 	```
 5. **Object.create()**
 
 	Create new object, using an existing object as the prototype.
-	```js
-	const me = {
-		  name: "Abhishek",
-		  eatsAppleDaily: false,
-		  printAbout: function(){
-		    console.log(`I am ${this.name}. and I ${this.eatsAppleDaily ? "eat" :"don't eat"} apple daily.`);
-		  }
-		};
 	
-	const myFriend = Object.create(me); // Creating a myFriend Object inheriting from me. He is my child now😃.  
+	```js
+		const me = {
+			  name: "Abhishek",
+			  eatsAppleDaily: false,
+			  printAbout: function(){
+			    console.log(`I am ${this.name}. and I ${this.eatsAppleDaily ? "eat" :"don't eat"} apple daily.`);
+			  }
+			};
 		
-	myFriend.name = "Ladoo";
-	myFriend.eatsAppleDaily = true;
+		const myFriend = Object.create(me); // Creating a myFriend Object inheriting from me. He is my child now😃.  
+			
+		myFriend.name = "Ladoo";
+		myFriend.eatsAppleDaily = true;
 
-	console.log(me.printAbout());
-	// Expected Output: I am Abhishek. and I don't eat apple daily.
-	console.log(myFriend.printAbout());
-	// Expected Output: I am Ladoo. and I eat apple daily.
+		console.log(me.printAbout());
+		// Expected Output: I am Abhishek. and I don't eat apple daily.
+		console.log(myFriend.printAbout());
+		// Expected Output: I am Ladoo. and I eat apple daily.
 	```
 
 6. **Object.entries()**
+	
+	Return array of he given object's own enumerable string-keyed property key-value pair😒.
+	It returns an array where each element is a key-value pair of the object. Each key-value pair si represented as an array with two elements: the key as the first element and the corresponding value as the second element.
+	
+	```js
+		const me = { name:"Abhishek", age:21 }
+		console.log(Object.entries(me))
+		// Expected output: [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
+	```
 
 7. **Object.fromEntries()**
-
+		Object.fromEntries transforms a list of key-value pairs into an object.
+		TL;DR Opp. of Object.entries().
+		js
+		const me = [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
+		console.log(Object.fromEntries(me))
+		// Expected output: { name: 'Abhishek', age: 21 }
+	
+	
 8. **Object.groupBy()**
 
 9. **Object.freeze()**
-
+		The Object.freeze() is a method that "freezes" an object. When you freeze an object, you prevent new properties from being added to it, existing properties from being removed or changed, and also prevent the prototype from being changed.
+		
+	```js
+		const me = { name:"Abhishek", age:21 }
+		Object.freeze(me); // Freezing the object
+		me.name = "scorcism";
+		me.age = 22;
+		console.log(me) 
+		// Expected output: { a: 1, b: 2 }
+	```
+	You can see changes are not affected to the object
+	
 10. **Object.isFrozen()**
+		 Determines if the object is frozen
+		```js
+		const me = { name:"Abhishek", age:21 }
+		Object.freeze(me); 
+		console.log(Object.isFrozen(me))
+		// Expected output: true
+		```
  
 11. **Object.seal()** 
+		Object.seal() is a method that "seals" an object.
+		
+	Sealing an object prevent new properties from being added to it and marks all existing properties an non-configurable (i.e prevent them from bein deleted or theri attributes from being changed).
+		 ```js
+		 const me = { name:"Abhishek", age:21 }
+		 Object.seal(me); 
+		me.name = "scorcism"; // This change will be affected 
+		delete me.age; // This deleting will not take effect
+		console.log(me)
+		// Expected Output: { name: 'scorcism', age: 21 }
+		 ```
 
+**Note:** `Object.freeze()` prevents any changes to the object, while `Object.seal()` allows changes to existing properties but prevents addition or removal of properties.
+		 
 12. **Object.isSealed()** 
+			Determines if an object is sealed.
+			```js
+		const me = { name:"Abhishek", age:21 }
+		 Object.seal(me); 	
+		 console.log(Object.isSealed(me));
+		 // Expected output: true
+		```
 
-13. **Object.toString()** 
+Now, lets focus on 
+### Inheritance static method
 
-There are the most common one to use, You can explore more [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) 
+1. bind
+2. call
+3. apply
+4. toString
+
+These are the most common one to use, You can explore more [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) 
