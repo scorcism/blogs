@@ -141,8 +141,8 @@ Lets look into the method of JS Objects.
 	
 	Return array of he given object's own enumerable string-keyed property key-value pair😒.
 	It returns an array where each element is a key-value pair of the object. Each key-value pair si represented as an array with two elements: the key as the first element and the corresponding value as the second element.
-	
-	```js
+
+   	```js
 		const me = { name:"Abhishek", age:21 }
 		console.log(Object.entries(me))
 		// Expected output: [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
@@ -151,15 +151,16 @@ Lets look into the method of JS Objects.
 7. **Object.fromEntries()**
 		Object.fromEntries transforms a list of key-value pairs into an object.
 		TL;DR Opp. of Object.entries().
-		js
+
+	```js
 		const me = [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
 		console.log(Object.fromEntries(me))
 		// Expected output: { name: 'Abhishek', age: 21 }
+	```
 	
-	
-8. **Object.groupBy()**
+9. **Object.groupBy()**
 
-9. **Object.freeze()**
+10. **Object.freeze()**
 		The Object.freeze() is a method that "freezes" an object. When you freeze an object, you prevent new properties from being added to it, existing properties from being removed or changed, and also prevent the prototype from being changed.
 		
 	```js
@@ -172,38 +173,38 @@ Lets look into the method of JS Objects.
 	```
 	You can see changes are not affected to the object
 	
-10. **Object.isFrozen()**
+11. **Object.isFrozen()**
 		 Determines if the object is frozen
-		```js
+	```js
 		const me = { name:"Abhishek", age:21 }
 		Object.freeze(me); 
 		console.log(Object.isFrozen(me))
 		// Expected output: true
-		```
+	```
  
-11. **Object.seal()** 
+12. **Object.seal()** 
 		Object.seal() is a method that "seals" an object.
 		
 	Sealing an object prevent new properties from being added to it and marks all existing properties an non-configurable (i.e prevent them from bein deleted or theri attributes from being changed).
-		 ```js
+	```js
 		 const me = { name:"Abhishek", age:21 }
 		 Object.seal(me); 
 		me.name = "scorcism"; // This change will be affected 
 		delete me.age; // This deleting will not take effect
 		console.log(me)
 		// Expected Output: { name: 'scorcism', age: 21 }
-		 ```
+	```
 
 **Note:** `Object.freeze()` prevents any changes to the object, while `Object.seal()` allows changes to existing properties but prevents addition or removal of properties.
 		 
 12. **Object.isSealed()** 
 			Determines if an object is sealed.
-			```js
+	```js
 		const me = { name:"Abhishek", age:21 }
 		 Object.seal(me); 	
 		 console.log(Object.isSealed(me));
 		 // Expected output: true
-		```
+	```
 
 Now, lets focus on 
 ### Inheritance static method
