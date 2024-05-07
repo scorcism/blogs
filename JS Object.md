@@ -60,7 +60,7 @@ This prototype object contains properties and method that are accessible to all 
 **Inheritance** is acheived by linking objects through their prototypes. 
 Consider **Object.create()**  that we used above. It is an method that creates a new object.
 
-Lets look into the method of JS Objects.
+### Static Method
 
 (Code snippets are in proper formats, do try too see result)
 
