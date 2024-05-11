@@ -1,3 +1,4 @@
+
 ## JavaScript Objects
 Similar to other programming languages javascript objects is a collection of key-value pairs, where each key is a string and each value can be of any data type. 
 
@@ -51,9 +52,9 @@ Try run the code snippet.
 (The `undefined` after each console log is the return value fo the `console.log` function itself. Relax, Nothing to worry🕺)
 
 ### Object Prototypes and Inheritance
-At the core of JS, lies the concept of prototype. Every object in JS is associate with a protorype object, which acts as a **blueprint** for that object. 
+At the core of JS, lies the concept of prototype. Every object in JS is associated with a prototype object, which acts as a **blueprint** for that object. 
 
-In short; object prototype servers as  a template for creating new objects.
+In short; object prototype serves as  a template for creating new objects.
 
 This prototype object contains properties and method that are accessible to all instances created from it.🍰
 
@@ -62,7 +63,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 
 ### Static Method
 
-(Code snippets are in proper formats, do try too see result)
+(Code snippets are in proper formats, do try😃)
 
 1. **Object.keys()**
 
@@ -122,12 +123,14 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 			  name: "Abhishek",
 			  eatsAppleDaily: false,
 			  printAbout: function(){
-			    console.log(`I am ${this.name}. and I ${this.eatsAppleDaily ? "eat" :"don't eat"} apple daily.`);
+			    console.log(`I am ${this.name}. and I ${this.eatsAppleDaily ? "eat" :"don't eat"} 
+							    apple daily.`);
 			  }
 			};
 		
-		const myFriend = Object.create(me); // Creating a myFriend Object inheriting from me. He is my child now😃.  
-			
+		// Creating a myFriend Object inheriting from me. 
+		const myFriend = Object.create(me); // He is my child now😃.  
+		
 		myFriend.name = "Ladoo";
 		myFriend.eatsAppleDaily = true;
 
@@ -140,7 +143,8 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 6. **Object.entries()**
 	
 	Return array of he given object's own enumerable string-keyed property key-value pair😒.
-	It returns an array where each element is a key-value pair of the object. Each key-value pair si represented as an array with two elements: the key as the first element and the corresponding value as the second element.
+	
+	It returns an array where each element is a key-value pair of the object. Each key-value pair is represented as an array with two elements: the key as the first element and the corresponding value as the second element.
 
    	```js
 		const me = { name:"Abhishek", age:21 }
@@ -150,7 +154,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 
 7. **Object.fromEntries()**
 		Object.fromEntries transforms a list of key-value pairs into an object.
-		TL;DR Opp. of Object.entries().
+		TL;DR Oppsite of Object.entries().
 
 	```js
 		const me = [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
@@ -158,21 +162,21 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		// Expected output: { name: 'Abhishek', age: 21 }
 	```
 	
-9. **Object.groupBy()**
-
 10. **Object.freeze()**
-		The Object.freeze() is a method that "freezes" an object. When you freeze an object, you prevent new properties from being added to it, existing properties from being removed or changed, and also prevent the prototype from being changed.
-		
+		The Object.freeze() is a method that "freezes" an object. 
+
+	When you freeze an object, you prevent new properties from being added to it, existing properties from being removed or changed, and also prevent the prototype from being changed.
+			
 	```js
-		const me = { name:"Abhishek", age:21 }
-		Object.freeze(me); // Freezing the object
-		me.name = "scorcism";
-		me.age = 22;
-		console.log(me) 
-		// Expected output: { a: 1, b: 2 }
+			const me = { name:"Abhishek", age:21 }
+			Object.freeze(me); // Freezing the object
+			me.name = "scorcism";
+			me.age = 22;
+			console.log(me) 
+			// Expected output: { a: 1, b: 2 }
 	```
-	You can see changes are not affected to the object
-	
+	Changes are not affected to the object
+		
 11. **Object.isFrozen()**
 		 Determines if the object is frozen
 	```js
@@ -194,8 +198,8 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		console.log(me)
 		// Expected Output: { name: 'scorcism', age: 21 }
 	```
-
-**Note:** `Object.freeze()` prevents any changes to the object, while `Object.seal()` allows changes to existing properties but prevents addition or removal of properties.
+	
+	**Note:** `Object.freeze()` prevents any changes to the object, while `Object.seal()` allows changes to existing properties but prevents addition or removal of properties.
 		 
 12. **Object.isSealed()** 
 			Determines if an object is sealed.
@@ -206,12 +210,103 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		 // Expected output: true
 	```
 
-Now, lets focus on 
+
 ### Inheritance static method
 
-1. bind
-2. call
-3. apply
-4. toString
+Before moving to instance method, Lets get idea of `this` keyword in object
 
-These are the most common one to use, You can explore more [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) 
+Suppose we have an Object
+```js
+	const person = { name: 'Abhishek' };
+```
+So If we add a function in the object; `this` will refer to all the properties of the same object 
+```js
+	const person = { 
+		name: 'Abhishek',
+		sayMyName: function() {
+			return `My name is ${this.name}`;
+		}
+	};
+
+	console.log(person.sayMyName());
+	// Expected Output: My name is Abhishek
+```
+As you can observe here, `this.name` is replaced with the key `name` value.
+
+Now that you have idea of `this` keyword use, lets continue further
+
+1. **prototype.bind()**
+	The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value.
+	This is usefull when we want to borrow a method from one object and use it in the context of other object,
+```js
+	function sayMyName (){
+		return `My name is ${this.name}`
+	}
+	
+	const person = { 
+		name: 'Abhishek',
+		sayMyName: sayMyName
+	};
+	
+	console.log(person.sayMyName());
+	// Expected Output: My name is Abhishek
+	
+	const person2 = {
+		name: 'Walter'
+	}
+	
+	const person2NameFunc = sayMyName.bind(person2);
+	
+	console.log(person2NameFunc());
+	// Expected Output: My name is Walter
+	
+```
+
+for the person2NameFunc the person object `this.name` is taken from the person2 object as we have bind the `sayMyName` function with person2 object.
+
+2. **prototype.call()**
+	The `call()` method is used to call a function with given `this` value and arguments provided individaully.
+	```js
+		function introduce(language) {
+			  console.log(`I code in ${language}. My name is ${this.name}.`);
+		}
+		
+		const mySelf = {
+			name: "Abhishek"
+		}
+
+		introduce.call(mySelf, 'Java');
+		// Expected output: I code in Java. My name is Abhishek.
+		
+	```
+	here; we have a function `introduce` that take an argument language and it simples does a console log of language and name. So to pass name to the function we have a object `mySelf` that has a key `name`. So using `bind` we did bind the function with the object so that function now have access to the object keys.
+
+
+3. **prototype.apply()**
+	The `apply()` method is similar to `call()`, but insted of accepting arguments individually, it accepts arguments as an array.
+	```js
+		function add(...args){
+			let sum = args.reduce((acc, curr)=> acc + curr, 0 );
+			console.log(sum);
+		}
+		const numbers = [1,2,3,4,5];
+		add.apply(null, numbers)
+		// Expected output: 15
+	```
+
+### When to use call, bind and apply
+- **call**:  Use `call` when you want to execute a function immediately and specify what `this` should refer to
+- **bind**: Use `bind` when you want to create a new function that, when executed later, has a predeterminf `this` value
+- **apply**" Use `apply` when you have an array of arguments that you want to pass to a function.
+
+---
+PS: The reason to use my name everywhere is that, while reading, whenever you see my name, you will tend to try it with your name too
+
+These are the most common one to use, You can explore more [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+---
+
+If the article helps you, leave a like, follow, or anything 🙂.  
+You can follow me on [LinkedIn](https://www.linkedin.com/in/abhishekpathak32/), [GitHub](https://github.com/scorcism), [Dev.to](https://dev.to/scorcism) and [hashnode](https://scorcism.hashnode.dev/).
+
+**Bye🍕**
