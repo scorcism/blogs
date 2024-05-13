@@ -1,4 +1,5 @@
 
+  
 ## JavaScript Objects
 Similar to other programming languages javascript objects is a collection of key-value pairs, where each key is a string and each value can be of any data type. 
 
@@ -49,6 +50,7 @@ Properties of JS object can be accessed using dot notation and bracket notation.
 	console.log(me["age"]);
 ```
 Try run the code snippet. 
+
 (The `undefined` after each console log is the return value fo the `console.log` function itself. Relax, Nothing to worry🕺)
 
 ### Object Prototypes and Inheritance
@@ -63,11 +65,12 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 
 ### Static Method
 
-(Code snippets are in proper formats, do try😃)
+(Try😃)
 
 1. **Object.keys()**
 
 	Returns an array of a given object's own enumerable property **names**. 
+	
 	TL;DR Object.keys() method will return list of keys. 
 	
 	**NOTE:** Own enumerable refers to the properties of an object that are both owned by the object itself (Not inherited from its property chain) 
@@ -96,7 +99,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 				// Expected Output: [ 'Abhishek', 21 ]
 	```
 
-4. **Object.assign()**
+3. **Object.assign()**
 
 	Copies the values of all enumerable own properties from one or more source objects to a target object.
 	```js
@@ -114,7 +117,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		console.log(merged === target)
 		// Expected Output: true
 	```
-5. **Object.create()**
+4. **Object.create()**
 
 	Create new object, using an existing object as the prototype.
 	
@@ -140,7 +143,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		// Expected Output: I am Ladoo. and I eat apple daily.
 	```
 
-6. **Object.entries()**
+5. **Object.entries()**
 	
 	Return array of he given object's own enumerable string-keyed property key-value pair😒.
 	
@@ -152,9 +155,11 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		// Expected output: [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
 	```
 
-7. **Object.fromEntries()**
-		Object.fromEntries transforms a list of key-value pairs into an object.
-		TL;DR Oppsite of Object.entries().
+6. **Object.fromEntries()**
+	
+	Object.fromEntries transforms a list of key-value pairs into an object.
+			
+	TL;DR Oppsite of Object.entries().
 
 	```js
 		const me = [ [ 'name', 'Abhishek' ], [ 'age', 21 ] ]
@@ -162,7 +167,8 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		// Expected output: { name: 'Abhishek', age: 21 }
 	```
 	
-10. **Object.freeze()**
+7. **Object.freeze()**
+
 		The Object.freeze() is a method that "freezes" an object. 
 
 	When you freeze an object, you prevent new properties from being added to it, existing properties from being removed or changed, and also prevent the prototype from being changed.
@@ -177,7 +183,8 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 	```
 	Changes are not affected to the object
 		
-11. **Object.isFrozen()**
+8. **Object.isFrozen()**
+
 		 Determines if the object is frozen
 	```js
 		const me = { name:"Abhishek", age:21 }
@@ -186,8 +193,9 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 		// Expected output: true
 	```
  
-12. **Object.seal()** 
-		Object.seal() is a method that "seals" an object.
+9. **Object.seal()**
+  
+	Object.seal() is a method that "seals" an object.
 		
 	Sealing an object prevent new properties from being added to it and marks all existing properties an non-configurable (i.e prevent them from bein deleted or theri attributes from being changed).
 	```js
@@ -201,7 +209,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 	
 	**Note:** `Object.freeze()` prevents any changes to the object, while `Object.seal()` allows changes to existing properties but prevents addition or removal of properties.
 		 
-12. **Object.isSealed()** 
+10. **Object.isSealed()** 
 			Determines if an object is sealed.
 	```js
 		const me = { name:"Abhishek", age:21 }
@@ -213,7 +221,7 @@ Consider **Object.create()**  that we used above. It is an method that creates a
 
 ### Inheritance static method
 
-Before moving to instance method, Lets get idea of `this` keyword in object
+Before moving to instance static methods, Lets get idea of `this` keyword in object
 
 Suppose we have an Object
 ```js
@@ -233,9 +241,10 @@ So If we add a function in the object; `this` will refer to all the properties o
 ```
 As you can observe here, `this.name` is replaced with the key `name` value.
 
-Now that you have idea of `this` keyword use, lets continue further
+Now that you have idea of `this` keyword usecase, lets continue further
 
 1. **prototype.bind()**
+
 	The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value.
 	This is usefull when we want to borrow a method from one object and use it in the context of other object,
 ```js
@@ -265,6 +274,7 @@ Now that you have idea of `this` keyword use, lets continue further
 for the person2NameFunc the person object `this.name` is taken from the person2 object as we have bind the `sayMyName` function with person2 object.
 
 2. **prototype.call()**
+
 	The `call()` method is used to call a function with given `this` value and arguments provided individaully.
 	```js
 		function introduce(language) {
@@ -279,8 +289,12 @@ for the person2NameFunc the person object `this.name` is taken from the person2 
 		// Expected output: I code in Java. My name is Abhishek.
 		
 	```
-	here; we have a function `introduce` that take an argument language and it simples does a console log of language and name. So to pass name to the function we have a object `mySelf` that has a key `name`. So using `bind` we did bind the function with the object so that function now have access to the object keys.
 
+Here, the *introduce* function takes a language argument and logs information about the language and the person's name. 
+
+The **call()** method is used to invoke this function with the mySelf object as the this value, allowing access to its properties.
+
+Unlike `bind()`, which creates a new function with a specified `this` value, `call()` directly invokes the function with the specified `this` value along with individual arguments.
 
 3. **prototype.apply()**
 	The `apply()` method is similar to `call()`, but insted of accepting arguments individually, it accepts arguments as an array.
