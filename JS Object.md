@@ -243,10 +243,11 @@ As you can observe here, `this.name` is replaced with the key `name` value.
 
 Now that you have idea of `this` keyword usecase, lets continue further
 
-1. **prototype.bind()**
+1.. **prototype.bind()**
 
-	The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value.
-	This is usefull when we want to borrow a method from one object and use it in the context of other object,
+The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value.
+This is usefull when we want to borrow a method from one object and use it in the context of other object,
+	
 ```js
 	function sayMyName (){
 		return `My name is ${this.name}`
@@ -273,10 +274,11 @@ Now that you have idea of `this` keyword usecase, lets continue further
 
 for the person2NameFunc the person object `this.name` is taken from the person2 object as we have bind the `sayMyName` function with person2 object.
 
-2. **prototype.call()**
+2.. **prototype.call()**
 
-	The `call()` method is used to call a function with given `this` value and arguments provided individaully.
-	```js
+The `call()` method is used to call a function with given `this` value and arguments provided individaully.
+
+```js
 		function introduce(language) {
 			  console.log(`I code in ${language}. My name is ${this.name}.`);
 		}
@@ -288,7 +290,7 @@ for the person2NameFunc the person object `this.name` is taken from the person2 
 		introduce.call(mySelf, 'Java');
 		// Expected output: I code in Java. My name is Abhishek.
 		
-	```
+```
 
 Here, the *introduce* function takes a language argument and logs information about the language and the person's name. 
 
@@ -296,9 +298,11 @@ The **call()** method is used to invoke this function with the mySelf object as 
 
 Unlike `bind()`, which creates a new function with a specified `this` value, `call()` directly invokes the function with the specified `this` value along with individual arguments.
 
-3. **prototype.apply()**
-	The `apply()` method is similar to `call()`, but insted of accepting arguments individually, it accepts arguments as an array.
-	```js
+3.. **prototype.apply()**
+
+The `apply()` method is similar to `call()`, but insted of accepting arguments individually, it accepts arguments as an array.
+	
+```js
 		function add(...args){
 			let sum = args.reduce((acc, curr)=> acc + curr, 0 );
 			console.log(sum);
@@ -306,7 +310,7 @@ Unlike `bind()`, which creates a new function with a specified `this` value, `ca
 		const numbers = [1,2,3,4,5];
 		add.apply(null, numbers)
 		// Expected output: 15
-	```
+```
 
 ### When to use call, bind and apply
 - **call**:  Use `call` when you want to execute a function immediately and specify what `this` should refer to
