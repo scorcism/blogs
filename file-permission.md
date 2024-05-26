@@ -1,57 +1,58 @@
+
 ## What are file permissions ⁉️
 
 File permissions play a crucial role in ensuring proper privacy and security.
 
-Don't worry, I'll guide you through it step by step 🪜.
+Don't worry, I'll guide you through it step by step .
 
-### How do they work 💼?
+### How do they work ?
 
-Unlike Windows 🏴‍☠️, Linux❤️‍🔥 files cannot be executed directly. This is because file permissions must allow🥱 the execution of a file for it to be executed.
+Unlike Windows , Linux❤️‍🔥 files cannot be executed directly. This is because file permissions must allow the execution of a file for it to be executed.
 
-😮 File permissions prevent unauthorized access to sensitive files or directories and also ensure data privacy.
+File permissions prevent unauthorized access to sensitive files or directories and also ensure data privacy.
 
-✌️ In short, without proper file permissions, file execution, access, and modification cannot occur.
+In short, without proper file permissions, file execution, access, and modification cannot occur.
 
-Now, before we move into file permissions description🪘, let's understand the Linux roles 🍎.
+Now, before we move into file permissions description, let's understand the Linux roles .
 
-### 🪴User Role
+### User Role
 
-There are three roles or entities in the Linux system: user👤, group👥, and others🐿️.
+There are three roles or entities in the Linux system: user👤, group👥, and others.
 
 Here is the brief overview👀:
 
-👤**User(u):** The Individual user who owns the file, directory. The user is often the person🤵/guy👦 who creatd the file or directory and becomes the owner💼 of the file. The owner has the most extensive control🍷 over the it.
+👤**User(u):** The Individual user who owns the file, directory. The user is often the person/guy who creatd the file or directory and becomes the owner of the file. The owner has the most extensive control over the it.
 
-👥**Group(g):** Users in the same🤘 group as the file owner will have access to the file. To allow a specific set of users to access the file, you can add them to a group and grant access to that group. This way, only the users in that group will have access to the file. Group permisssions allow collaboration🤝 among users with the similar😎 access.
+👥**Group(g):** Users in the same group as the file owner will have access to the file. To allow a specific set of users to access the file, you can add them to a group and grant access to that group. This way, only the users in that group will have access to the file. Group permisssions allow collaboration among users with the similar access.
 
-👪**Others(o):** Everyone else🦨 who has access to the system but isn't the owner or in the group associated with the file. Others include the general public📢.
+**Others(o):** Everyone else who has access to the system but isn't the owner or in the group associated with the file. Others include the general public.
 
-**All three users/entities will have three types of permissions**🙌
+**All three users/entities will have three types of permissions**
 
 ### 💭Entities Permission
-📕**Read(r):** Allows viewing the content of a file or listing the content of a directory. Read permission is represented by the "r" symbol😋. Read permission also has an octal value of 4. Octal value is another way↕️ of representing file permissions.
+📕**Read(r):** Allows viewing the content of a file or listing the content of a directory. Read permission is represented by the "r" symbol. Read permission also has an octal value of 4. Octal value is another way↕️ of representing file permissions.
 
 We will explore this further.
 
-✍️**Write(w):** Allows modification of the file’s content or creating, deleting and renaiming within the directory😺. Write permission is represented by “w” symbol, it has an octal value of **2.**
+✍️**Write(w):** Allows modification of the file’s content or creating, deleting and renaiming within the directory. Write permission is represented by “w” symbol, it has an octal value of **2.**
 
-🏊‍♂️**Execute(x):** This enables running the file as a program or traversing a directory. Execute has octal value of **1.**
-
----
-To **summarize**, there are three🥉 roles in a Linux system: 👤user, 👥group, and 👪others.
-
--   The user is the owner👑 of the file or directory,
--   Group consists of users who belong to the same group🎅 as the file owner,
--   others refers to the general public📢.
-
-Each of these users has three individual permissions: 📕Read, ✍️Write, and 🏊‍♂️Execute.
-
--   Read permission allows the user to only read📖 the file, and it is represented by the octal value of 4.
--   Write permission allows the user to modify🧘‍♂️ the file, and it is represented by the octal value of 2.
--   Execute permission allows the user to execute🏃 a file or traverse a directory, and it is represented by the octal value of 1.
+**Execute(x):** This enables running the file as a program or traversing a directory. Execute has octal value of **1.**
 
 ---
-These permissions are organized in a string of nine characters for each file or diectory🐙.
+To **summarize**, there are three roles in a Linux system: 👤user, 👥group, and others.
+
+-   The user is the owner of the file or directory,
+-   Group consists of users who belong to the same group as the file owner,
+-   others refers to the general public.
+
+Each of these users has three individual permissions: 📕Read, ✍️Write, and Execute.
+
+-   Read permission allows the user to only read the file, and it is represented by the octal value of 4.
+-   Write permission allows the user to modify the file, and it is represented by the octal value of 2.
+-   Execute permission allows the user to execute a file or traverse a directory, and it is represented by the octal value of 1.
+
+---
+These permissions are organized in a string of nine characters for each file or diectory.
 
 eg:
 
@@ -75,37 +76,37 @@ Here's a breakdown of what a typical **`ls -l`** output looks like:
 
 In this example:
 
--   **`rw-r--r--`** represents the permissions🐯.
--   **`1`** indicates the number of hard links🖇️.
--   **`user`** is the owner of the file👑.
--   **`group`** is the group associated with the file👥.
--   **`43`** is the file size🤌.
--   **`Sep 19 01:00`** is the modification date💍.
--   **`myfile_scor32k.txt`** is the filename❣️.
+-   **`rw-r--r--`** represents the permissions.
+-   **`1`** indicates the number of hard links.
+-   **`user`** is the owner of the file.
+-   **`group`** is the group associated with the file.
+-   **`43`** is the file size.
+-   **`Sep 19 01:00`** is the modification date.
+-   **`myfile_scor32k.txt`** is the filename.
 
-You may be thinking🤔 but how `-rw-r--r--` permission got attached🔒 to the file when we created it,
+You may be thinking🤔 but how `-rw-r--r--` permission got attached to the file when we created it,
 
 this is becase of **UMASK**.
 
-### USMAK🤧 ?
+### USMAK ?
 
-In simple terms, whenever we create a file or directory in a Linux system, the system assigns default permissions to the file or directory based on Linux itself👑.
+In simple terms, whenever we create a file or directory in a Linux system, the system assigns default permissions to the file or directory based on Linux itself.
 
-Interesting! more🥸
+Interesting! more
 
-The ************umask************ is generally set to `022`. You can check that using `umask` command.
+The **umask** is generally set to `022`. You can check that using `umask` command.
 
 **Notes**: The default permission for a file is `666`, and the default permission for a directory is `777`.
 
 The entire process is as follows:
 
-😎When a user creates a file, it will have a default permission of `666`. The `022` umask will then be subtracted from `666`, resulting in a final permission of `644`😎.
+When a user creates a file, it will have a default permission of `666`. The `022` umask will then be subtracted from `666`, resulting in a final permission of `644`.
 
 The user will have read and write permission(6=4+2), the group will have read permission(4), and others will also have read permission(4).
 
 🌱You can also try this with a directory: `777` - `022` = `755`.
 
-### 👾Modifying file permissions
+### Modifying file permissions
 
 **chown** which stands for change file mode or change file permission command is used to modify the permissions.
 
@@ -170,31 +171,31 @@ chmod g+x myfile.txt
 
 ### Octal Mode in chmod
 
-This is the advanced🎓 version of file permission manipulation🧘‍♀️. Here, we use numeric values to represent each permission types (read, write, execute).
+This is the advanced version of file permission manipulation. Here, we use numeric values to represent each permission types (read, write, execute).
 
 -   Read[r] = 4
 -   Write(w) = 2
 -   Execute(x) = 1
 
-To set permissions using an octal value, we assign a three-digit number to each entity (user, group, others) based on the desired🤖 permission.
+To set permissions using an octal value, we assign a three-digit number to each entity (user, group, others) based on the desired permission.
 
-**Note:** The file or directory can max have 777 file permission, which means the user,group and others will have read, write, and execute permission resepectively🦆.
+**Note:** The file or directory can max have 777 file permission, which means the user,group and others will have read, write, and execute permission resepectively.
 
-## 👾Modifying file permissions, Octal edition.
+## Modifying file permissions, Octal edition.
 
 Before moving forward,
 
-we need to remember that the permissions are just a combination of (4, 2, 1), and as per our requirements, we can alter this🐊.
+we need to remember that the permissions are just a combination of (4, 2, 1), and as per our requirements, we can alter this.
 
 Suppose we want to add read and execute permission to only the user and read permission to groups and others.
 
-So🌿,
+So,
 
 We use `1` as the octal value for execute, and for read, we use `4`.
 
 The combined value will be `544`.
 
-### 🤠Example 1:
+### Example 1:
 
 **Add read and execute permission to the user, and read permission to the group and others.**
 
@@ -210,7 +211,7 @@ To be precise devide the `r-xr—r—` into 3 blocks `r-x r-- r--`, this will cl
 
 ![https://imgur.com/pAW6nHh.png](https://imgur.com/pAW6nHh.png)
 
-### 😃Example 2:
+### Example 2:
 
 Suppose, we want to add read and write to user, write and execute to group and read to others.
 
@@ -226,9 +227,9 @@ chmod 634 myfile.txt
 
 ![https://imgur.com/WSSOFIM.png](https://imgur.com/WSSOFIM.png)
 
-If i take examples there will not be any end😀, you can play around with this.
+If i take examples there will not be any end, you can play around with this.
 
-### 🦾Changing file ownership
+### Changing file ownership
 
 **chown** which stands for change ownership command is used to chnage the ownership of file or directory.
 
@@ -240,7 +241,7 @@ chown abhishek myfile.txt
 
 ![https://imgur.com/WQNSSYn.png](https://imgur.com/WQNSSYn.png)
 
-### 🚇Changing file group Ownership
+### Changing file group Ownership
 
 **chgrp** command will be used to chnage the file group.
 
@@ -252,9 +253,9 @@ chgrp geet myfile.txt
 
 ![https://imgur.com/DHHszRl.png](https://imgur.com/DHHszRl.png)
 
-### Some tips🏖️
+### Some tips
 
--   ****************************Never use 777 →**************************** It’s a severe security risk and show be avoided.
+-   **Never use 777 →** It’s a severe security risk and show be avoided.
 -   **use ls -l** → This displays detailed information about files and directories, including their permissions.
 -   **use chmod**
 -   **Limit the global access**
